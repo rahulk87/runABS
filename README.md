@@ -4,7 +4,7 @@ A collection of R scripts and functions to run ABSOLUTE on pipeline mutation sum
 
 ## Generating a standard package summary
 
-### Metrics fie
+### Metrics file
 1. Check that none of the tumor samples have sequencing statistics below 90
 
 ### geneCN
