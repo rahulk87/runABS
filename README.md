@@ -36,5 +36,5 @@ A collection of R scripts and functions to run ABSOLUTE on pipeline mutation sum
   1. Comments and suggestions throughout the code
   2. Will need to make cosmetic chages to the figures
     - In the CCF heatmap, surround mutations with yellow circles with a yellow box indicating these are clonal.  Those with LOH need to have a white slash through them
-    - Make all samples *bold*, mutations *italicized* and everything should be in Arial Font
+    - Make all **samples bold**, *mutations italicized* and everything should be in Arial Font
 8. Run *make mutSigReport*
