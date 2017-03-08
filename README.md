@@ -9,7 +9,7 @@ A collection of R scripts and functions to run ABSOLUTE on pipeline mutation sum
 
 ### geneCN
 1. Go through each and every sample and check whether *amplifications* or *homozygous deletions* were called correctly and ensure their prsense in the sample *geneCN.txt* and visible in the copy number corresponding plot
-  - our methods allow for manual curation, thus, regions marked as *homozygous deletions* are likely losses and should be changed a *loss*
+  - our methods allow for manual curation, thus, inspect and confirm all regions marked as *homozygous deletions*.  Some of these may need to be changed to a *loss* if the signal lacks strength
 2. FACETS can miss calls depending on how the genome is segmented.  These parameters change the sensitivity and size of CNV detected.  If there are regions that should be considered having a CNV please discuss it with the group as to ascertain what parameters should be modified to improve our CNV sensitivity.
 
 ### Mutation Summary
