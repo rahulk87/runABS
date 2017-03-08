@@ -24,7 +24,7 @@ absIn$t_alt_count <- round( mutationSummary$TUMOR_DP * mutationSummary$TUMOR_MAF
 absIn$t_ref_count <- mutationSummary$TUMOR_DP - absIn$t_alt_count
 absIn$dbSNP_Val_Status <- rep("validated", nrow(mutationSummary))
 absIn$Chromosome <- as.numeric(gsub("X", "23", as.character(mutationSummary$CHROM)))
-absIn$Start_position <- mutationSummary$POS)
+absIn$Start_position <- mutationSummary$POS
 
 
 ## loop trhough sampleList and write a .txt file per sample
