@@ -6,7 +6,9 @@
 mutationsFile <- "muts.csv" 
 outRData <- "mutations.rda"
 
-mutationSummary <- read.csv(mutationsFile, header = TRUE, stringsAsFactors = FALSE)
+## read in the mutation summary file, and create a list with the unique samples.
+## fields containing NA, a period '.' or empty are treaded as missing values
+mutationSummary <- read.csv(mutationsFile, header = TRUE, stringsAsFactors = FALSE, na.strings = c(NA, ".", ""))
 sampleList <- unique(mutationSummary$TUMOR_SAMPLE)
 
 ## create an empty data.frame containing the number of colums required to run ABSOLUTE
@@ -26,6 +28,6 @@ absIn$Start_position <- mutationSummary$POS)
 
 
 ## loop trhough sampleList and write a .txt file per sample
-sapply(sampleList, function(TM) write.mutationSummaryle(absIn[absIn$Tumor_Sample_Barcode == TM , ], file = paste(TM, "muts.txt", sep = "_"), sep = "\t", row.names = FALSE))
+sapply(sampleList, function(TM) write.table(absIn[absIn$Tumor_Sample_Barcode == TM , ], file = paste(TM, "muts.txt", sep = "_"), sep = "\t", row.names = FALSE, na = "."))
 
 save.image(outRData)
