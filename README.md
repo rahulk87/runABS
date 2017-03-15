@@ -9,7 +9,7 @@ A collection of R scripts and functions to run ABSOLUTE on pipeline mutation sum
 
 ### geneCN
 1. Go through each and every sample and check whether *amplifications* or *homozygous deletions* were called correctly and ensure their prsense in the sample *geneCN.txt* and visible in the copy number corresponding plot
-  - our methods allow for manual curation, thus, inspect and confirm all regions marked as *homozygous deletions*.  Some of these may need to be changed to a *loss* if the signal lacks strength
+   - our methods allow for manual curation, thus, inspect and confirm all regions marked as *homozygous deletions*.  Some of these may need to be changed to a *loss* if the signal lacks strength
 2. FACETS can miss calls depending on how the genome is segmented.  These parameters change the sensitivity and size of CNV detected.  If there are regions that should be considered having a CNV please discuss it with the group as to ascertain what parameters should be modified to improve our CNV sensitivity.
 
 ### Mutation Summary
@@ -35,8 +35,8 @@ A collection of R scripts and functions to run ABSOLUTE on pipeline mutation sum
 7. QC pipeline LOH and hotspot annotation
    1. Compare first iteration HOTSPOT loci calls by the pipeline to the hostpot loci calls fromm these R scripts.  These should be identical, however, discrepancies occur when the ANN....EFFECT is a splice site mutation, intronic variants, and the gene has known hotspot loci.
    2. Compare LOH pipeline calls by the pipeline to loh calls from these R scripts.  
-    - When mutations fall outside segments these are marekd as errors and should be curated by hand from the cncf/ segment files.
-      + use the segment closest to the mutation position, where if lesser copy number (lcn) = 0 is LOH and lnc ≥ 1 is NO-LOH.
+     - When mutations fall outside segments these are marekd as errors and should be curated by hand from the cncf/ segment files.
+       + use the segment closest to the mutation position, where if lesser copy number (lcn) = 0 is LOH and lnc ≥ 1 is NO-LOH.
 7. Remove FACETS CCF and Clonal Status columns as ABSOLUTE CCF and Clonal Status tend to be more accurate.  However, compare these to see how much concordance we have between the calls.
 7. Run *Mutation_Figure_Patient.R*
    1. Comments and suggestions throughout the code
