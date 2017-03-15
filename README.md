@@ -18,16 +18,16 @@ A collection of R scripts and functions to run ABSOLUTE on pipeline mutation sum
 3. Run the script *Make_ABS_muts_Input.R* to generate per sample input files for ABSOLUTE
 4. Run *Make_SegFromFacets.R* to create the copy number input files for ABSOLUTE
 5. Run *RunAbsolute.R*
-  1. If you run this script in the same R session as the previous two, *sampleList* object is preserved and will run the ABSOLUTE on a loop
-  2. Run **Step 1** and **Step 2** of *RunAbsolute.R*
-  3. An `Output/` directory containing *absolute_results/* will be created
-  4. Select ABSOLUTE solutions for each case.
+   1. If you run this script in the same R session as the previous two, *sampleList* object is preserved and will run the ABSOLUTE on a loop
+   2. Run **Step 1** and **Step 2** of *RunAbsolute.R*
+   3. An `Output/` directory containing *absolute_results/* will be created
+   4. Select ABSOLUTE solutions for each case.
     - In `Output/absolute_results/` open the *\*.PP-calls_tab.txt* file.  
     - Create a new first column labeled "solution"
     - Open the sample *.pdf* from *Output/absolute_results/* .  
       + Best solution should have an **SSNV multiploidy peak between 1.0 or 2.0** and **CCF plot should have a green peak around 1.0**
     - If you are undecided between two solutions, pick the lower number solution and consult with a colleague
-  5.Once solutions are set run **Step 3** in *RunAbsolute.R*
+   5.Once solutions are set run **Step 3** in *RunAbsolute.R*
 6. Run *CombineAbsMaf.R*
   1. Change the MAF directory to where the results from ABSOLUTE are present. This is typically *Output/absolute_results/Output/reviewed/SEG_MAF*
   2. Asign to *results.directory* the location of the *muts.csv* file
