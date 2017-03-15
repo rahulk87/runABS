@@ -37,7 +37,7 @@ A collection of R scripts and functions to run ABSOLUTE on pipeline mutation sum
   2. Compare LOH pipeline calls by the pipeline to loh calls from these R scripts.  
     - When mutations fall outside segments these are marekd as errors and should be curated by hand from the cncf/ segment files.
       + use the segment closest to the mutation position, where if lesser copy number (lcn) = 0 is LOH and lnc ≥ 1 is NO-LOH.
-7. Remove FACETS CCF and Clonal Status columns as ABSOLUTE CCF and Clonal Status tend to be more accurate.
+7. Remove FACETS CCF and Clonal Status columns as ABSOLUTE CCF and Clonal Status tend to be more accurate.  However, compare these to see how much concordance we have between the calls.
 7. Run *Mutation_Figure_Patient.R*
   1. Comments and suggestions throughout the code
   2. Will need to make cosmetic chages to the figures
