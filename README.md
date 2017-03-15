@@ -32,15 +32,17 @@ A collection of R scripts and functions to run ABSOLUTE on pipeline mutation sum
    1. Change the MAF directory to where the results from ABSOLUTE are present. This is typically *Output/absolute_results/Output/reviewed/SEG_MAF*
    2. Asign to *results.directory* the location of the *muts.csv* file
    3. This is all annotated in the code.  If the hotspots are already annotated you do not need to redo this step.  Currently, **REDO the LOH**
-7. QC pipeline LOH and hotspot annotation
+7. QC pipeline LOH and hotspot annotation on the csv file
    1. Compare first iteration HOTSPOT loci calls by the pipeline to the hostpot loci calls fromm these R scripts.  These should be identical, however, discrepancies occur when the ANN....EFFECT is a splice site mutation, intronic variants, and the gene has known hotspot loci.
    2. Compare LOH pipeline calls by the pipeline to loh calls from these R scripts.  
      - When mutations fall outside segments these are marekd as errors and should be curated by hand from the cncf/ segment files.
        + use the segment closest to the mutation position, where if lesser copy number (lcn) = 0 is LOH and lnc ≥ 1 is NO-LOH.
-7. Remove FACETS CCF and Clonal Status columns as ABSOLUTE CCF and Clonal Status tend to be more accurate.  However, compare these to see how much concordance we have between the calls.
+   3. Make sure there are no missing values from the ABSOLUTE calculations or any other required fields
 7. Run *Mutation_Figure_Patient.R*
    1. Comments and suggestions throughout the code
    2. Will need to make cosmetic chages to the figures
      - In the CCF heatmap, surround mutations with yellow circles with a yellow box indicating these are clonal.  Those with LOH need to have a white slash through them
      - Make all **samples bold**, *mutations italicized* and everything should be in Arial Font
+9. Prepare Excel Spreadsheet summary
+   1. Remove FACETS CCF and Clonal Status columns as ABSOLUTE CCF and Clonal Status tend to be more accurate.  However, compare these to see how much concordance we have between the calls.
 8. Run *make mutsig_report*
