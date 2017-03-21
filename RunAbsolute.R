@@ -2,7 +2,7 @@
 #### In R #####
 ## setwd('/Users/selenicp/Documents/Projects/Radiogenomics/WithinPatientSufam/ABS/Output/')
 
-obj.name = "lm" ##  Change this to describe the tumor type
+obj.name = "new" ##  Change this to describe the tumor type
 load("mutations.rda")  ## from MakeABS_Muts
 
 ## libraries

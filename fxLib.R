@@ -1,15 +1,10 @@
 ## functions library
 
-make_seg <- function(filename) {
-    
-    seg = read.delim(filename, header = TRUE, as.is =TRUE)
-
+make_seg <- function(filename, path = ".") {
+    seg = read.delim(file.path(path, filename), header = TRUE, as.is =TRUE)
     seg.df = seg[ , c("chrom", "loc.start", "loc.end", "num.mark", "cnlr.median")]
-
     colnames(seg.df) = c("Chromosome", "Start", "End", "Num_Probes", "Segment_Mean")
-
     title = substr(filename, 1, regexpr("_", filename)-1)
-    
     write.table(seg.df, file = paste(title, ".txt", sep = ""), sep = "\t", row.names = FALSE)
 } # end make_seg
 

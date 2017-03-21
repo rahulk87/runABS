@@ -1,21 +1,14 @@
 # Makes ABS seg file from Facets seg file
-
 # load funcions library
 source("fxLib.R")
 
-#setwd('/Users/selenicp/Documents/Projects/Radiogenomics/WithinPatientSufam/ABS/')  # If you run this directly after Make_ABS_muts_Input.R you dont need change the directory
+load("mutations.rda")
 
-cncfDir <- "~/mskcc/BioInformatics/Leiomyoma_Progression/"
-files <- list.files(path = ".", pattern = "cncf.txt$") # List all segments files
+cncfDir <- "cncf/"
+files <- list.files(path = cncfDir, pattern = "cncf.txt$") # List all segments files
 
-## consider alterantive :
-##  sapply(file.path(cncfDir, files), make_seg)
+##  output files are placed on the current directory
+##  to have output files in the cncf/ directory, make the files object contain the full path i.e. file.path(cncfDir, file.cncf.txt), "."
+sapply(files, make_seg, cncfDir)
 
-ABS_filename = as.numeric(0)
-
-for (i in 1:length(files)){
-    make_seg(file.path(cncfDir, files[i]))
-
-  ABS_filename[i] = substr(files[i],1,regexpr("_",files[i])-1)
-
-}
+save.image("mutations.rda")
